@@ -90,11 +90,11 @@ function generateMarkdown(data) {
   
   ${data.usage}
   
+  ${renderLicenseSection(data.license)}
+  
   [![License: ${data.license}](https://img.shields.io/badge/License-${
     data.license
   }-brightgreen)](https://opensource.org/licenses/${data.license})
-  
-  ${renderLicenseSection(data.license)}
   
   ## Contributing
   
