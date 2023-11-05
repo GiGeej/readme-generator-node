@@ -55,8 +55,35 @@ const questions = [
   {
     type: "input",
     name: "questions",
-    message:
-      "If you have any questions or need further assistance, don't hesitate to reach out. You can contact us in the following ways: <please provide methods of contact>",
+    message: "Please provide a message for those who wish to contact you",
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "please select your license",
+    choices: [
+      "MIT",
+      "GNU General Public License (GPL)",
+      "Apache License 2.0",
+      "BSD Licenses",
+      "GNU Lesser General Public License (LGPL)",
+      "Creative Commons Licenses",
+      "Unlicense",
+      "Eclipse Public License (EPL)",
+      "Mozilla Public License (MPL)",
+      "ISC License",
+      "Other",
+    ],
+  },
+  {
+    type: "input",
+    name: "username",
+    message: "What is your GitHub username?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
   },
 ];
 
