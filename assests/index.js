@@ -100,9 +100,20 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions).then((data) => {
-    const markdownContent = generateMarkdown(data);
-    writeToFile("README.md", markdownContent);
+  inquirer.prompt(questions.slice(0, 3)).then((data) => {
+    const selectedContents = data.contents.map((content) =>
+      content.toLowerCase()
+    );
+
+    // Filter the questions based on selected contents
+    const filteredQuestions = questions.filter((question) =>
+      selectedContents.includes(question.name)
+    );
+
+    inquirer.prompt(filteredQuestions).then((filteredData) => {
+      const markdownContent = generateMarkdown(filteredData);
+      writeToFile("README.md", markdownContent);
+    });
   });
 }
 
