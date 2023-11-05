@@ -70,6 +70,12 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const contentsList = Array.isArray(data.contents)
+    ? data.contents
+        .map((item) => `- [${item}](#${item.toLowerCase()})`)
+        .join("\n")
+    : "";
+
   return `# ${data.title}
   
   ## Description
@@ -78,9 +84,7 @@ function generateMarkdown(data) {
   
   ## Table of Contents
   
-  ${data.contents
-    .map((item) => `- [${item}](#${item.toLowerCase()})`)
-    .join("\n")}
+  ${contentsList}
   
   ## Installation
   
