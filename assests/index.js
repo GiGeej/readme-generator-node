@@ -44,7 +44,7 @@ const questions = [
     type: "input",
     name: "tests",
     message:
-      "To ensure that this project functions as expected and to validate its integrity, follow these steps to run the tests:",
+      "\nTo ensure that this project functions as expected and to validate its integrity, follow these steps to run the tests:\n",
   },
   {
     type: "input",
